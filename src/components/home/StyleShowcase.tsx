@@ -24,7 +24,7 @@ export default function StyleShowcase() {
   return (
     <section id="looks" className="relative bg-ink">
       <div className="mx-auto max-w-[1500px] px-5 pt-24 pb-12 sm:px-8 lg:px-10">
-        <p className="eyebrow">03 — Shop the look</p>
+        <p className="eyebrow">02 — Shop the look</p>
         <div className="mt-5 flex flex-wrap items-end justify-between gap-6">
           <h2 className="display text-[clamp(46px,5.8vw,100px)]">
             Dressed, <em className="text-gold">head to toe.</em>

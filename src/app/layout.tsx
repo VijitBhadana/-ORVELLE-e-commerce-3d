@@ -25,6 +25,14 @@ const archivo = localFont({
   adjustFontFallback: false,
 });
 
+// hand-lettered marker, only for the "Good vibes only" tag in the Originals section
+const marker = localFont({
+  src: "./fonts/permanent-marker.woff2",
+  weight: "400",
+  display: "swap",
+  variable: "--font-marker-src",
+});
+
 export const metadata: Metadata = {
   title: { default: `${BRAND.name} — Menswear, considered`, template: `%s · ${BRAND.name}` },
   description: BRAND.description,
@@ -34,7 +42,7 @@ export const viewport: Viewport = { themeColor: "#E6D5BD", width: "device-width"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${anton.variable} ${archivo.variable}`}>
+    <html lang="en" className={`${anton.variable} ${archivo.variable} ${marker.variable}`}>
       <body>
         <StoreProvider>
           <SmoothScroll>

@@ -25,6 +25,7 @@
   /* identical to Coco-cola-web */
   --font-display: var(--font-anton), Impact, "Arial Narrow", sans-serif;
   --font-sans: var(--font-archivo), system-ui, -apple-system, sans-serif;
+  --font-marker: var(--font-marker-src), "Comic Sans MS", cursive;
 
   --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
 

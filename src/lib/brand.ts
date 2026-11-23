@@ -34,7 +34,6 @@ export type SiteContent = {
   announcement: string;
   heroHeading: string;
   heroSubheading: string;
-  editorialHeading: string;
   promoHeading: string;
   promoText: string;
   promoCode: string;
@@ -47,7 +46,6 @@ export const DEFAULT_CONTENT: SiteContent = {
   heroHeading: "Redefine your everyday style.",
   heroSubheading:
     "Discover thoughtfully curated men's essentials designed for confidence, comfort and timeless style.",
-  editorialHeading: "Style is not just what you wear. It's how you present yourself.",
   promoHeading: "The Essentials Edit",
   promoText: "Five complete looks. One effortless wardrobe. Take 10% off your first order.",
   promoCode: "WELCOME10",

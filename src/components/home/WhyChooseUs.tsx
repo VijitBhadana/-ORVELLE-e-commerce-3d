@@ -20,7 +20,7 @@ export default function WhyChooseUs() {
       <div className="relative mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
           <div>
-            <p className="eyebrow">04 — Why {BRAND.name}</p>
+            <p className="eyebrow">03 — Why {BRAND.name}</p>
             <h2 className="display mt-5 text-[clamp(46px,5.8vw,100px)]">
               Fewer decisions. <br />
               <em className="text-white/45">Better outfits.</em>
