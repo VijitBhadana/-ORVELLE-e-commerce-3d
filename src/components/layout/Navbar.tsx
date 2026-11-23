@@ -81,7 +81,7 @@ export default function Navbar() {
                 {menuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
               <Link href="/" aria-label={`${BRAND.name} home`}>
-                <Logo />
+                <Logo className="text-fg" />
               </Link>
             </div>
 

@@ -12,6 +12,7 @@
  */
 import * as THREE from "three";
 import type { Testimonial } from "./testimonials";
+import { LOGO_MARK, LOGO_ORANGE, LOGO_WORD } from "./logoPaths";
 
 const IVORY = 0xe6d5bd;
 const IVORY_DARK = 0xcdbb9f;
@@ -296,22 +297,26 @@ function drawTestimonial(t: Testimonial, i: number, { fonts, lookName, sample }:
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, TEX_W, TEX_H);
 
-  // top row: mark + brand, counter
+  // top row: logo (mark + wordmark), counter
   ctx.textBaseline = "middle";
-  ctx.strokeStyle = orange;
-  ctx.lineWidth = 4;
-  ctx.beginPath();
-  ctx.arc(X + 30, 110, 30, 0, Math.PI * 2);
-  ctx.stroke();
-  ctx.fillStyle = orange;
-  ctx.font = `400 34px ${fonts.display}`;
-  ctx.textAlign = "center";
-  ctx.fillText("O", X + 30, 112);
-  ctx.textAlign = "left";
+  const markH = 72;
+  const markS = markH / LOGO_MARK.height;
+  ctx.save();
+  ctx.translate(X, 110 - markH / 2);
+  ctx.scale(markS, markS);
+  ctx.fillStyle = LOGO_ORANGE;
+  ctx.fill(new Path2D(LOGO_MARK.orange), "evenodd");
   ctx.fillStyle = ivory;
-  ctx.font = `400 40px ${fonts.display}`;
-  ctx.letterSpacing = "2px";
-  ctx.fillText("ORVELLE", X + 80, 112);
+  ctx.fill(new Path2D(LOGO_MARK.dark), "evenodd");
+  ctx.restore();
+  const wordH = 28;
+  const wordS = wordH / LOGO_WORD.height;
+  ctx.save();
+  ctx.translate(X + LOGO_MARK.width * markS + 18, 110 - wordH / 2);
+  ctx.scale(wordS, wordS);
+  ctx.fillStyle = ivory;
+  ctx.fill(new Path2D(LOGO_WORD.dark), "evenodd");
+  ctx.restore();
   ctx.textAlign = "right";
   ctx.font = `700 28px ${fonts.body}`;
   ctx.letterSpacing = "4px";

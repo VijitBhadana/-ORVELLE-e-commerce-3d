@@ -8,6 +8,7 @@ import { useStore } from "@/lib/store";
 import { readLS, writeLS } from "@/lib/storage";
 import { useSmoothScroll } from "@/components/providers/SmoothScroll";
 import Reveal from "@/components/ui/Reveal";
+import Logo, { LogoWordmark } from "./Logo";
 
 /*
  * Footer palette: a soft-black panel floating on the warm-ivory page, a burnt-orange
@@ -109,10 +110,8 @@ export default function Footer() {
             <div className="flex flex-col justify-between gap-5 rounded-[18px] border border-ink/10 p-5 sm:rounded-[24px] sm:p-7">
               <div className="flex flex-wrap items-start justify-between gap-6">
                 <div>
-                  <span className="flex items-center gap-3">
-                    <span className="grid h-10 w-10 place-items-center rounded-full bg-gold font-display text-xl leading-none text-ink">{BRAND.mark}</span>
-                    <span className="font-display text-[28px] uppercase tracking-[0.04em] text-ink">{BRAND.name}</span>
-                  </span>
+                  <Logo size="lg" className="text-ink" />
+                  <span className="sr-only">{BRAND.name}</span>
                   <p className="mt-3 max-w-sm text-sm leading-[1.5] text-ink/60">{BRAND.description}</p>
                 </div>
 
@@ -156,13 +155,8 @@ export default function Footer() {
         {/* ---- links, with the brand word as their background ---- */}
         <div className="mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-8">
           <div className="relative">
-            {/* brand word: its baseline sits just above the bottom bar's hairline */}
-            <p
-              aria-hidden
-              className="display pointer-events-none absolute bottom-[calc(12px-0.09em)] left-1/2 -z-10 w-screen -translate-x-1/2 text-center text-[26vw] sm:text-[21.4vw] whitespace-nowrap text-ink/[0.07] select-none"
-            >
-              {BRAND.name}
-            </p>
+            {/* brand wordmark: sits just above the bottom bar's hairline */}
+            <LogoWordmark className="pointer-events-none absolute bottom-3 left-1/2 -z-10 h-auto w-[92vw] max-w-none -translate-x-1/2 text-ink/[0.07] select-none" />
             <div className="grid grid-cols-2 gap-x-6 gap-y-9 pt-10 pb-16 sm:pt-12 sm:pb-20 lg:grid-cols-4 lg:gap-12 lg:pt-14 lg:pb-24">
               {COLS.map((c) => (
                 <div key={c.title}>
